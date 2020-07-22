@@ -18,38 +18,32 @@
 #
 # Put a comment noting which class is the base class
 
-
-class VehicleType:
-
-    def __init__(self, vehicle, flight_vehicle, star_ship):
-        self.flight_vehicle = flight_vehicle
-        self.star_ship = star_ship
-        self.vehicle = vehicle
-
-# Base Class
+# Base class - vehicle is the base class because it is the parent class that is being inherited
 
 
-class GroundVehicle(VehicleType):
-
-    def __init__(self, vehicle, car, motorcycle):
-        super().__init__(vehicle)
-        self.car = car
-        self.motorcycle = motorcycle
-
-    def __str__(self):
-        return f'{self.vehicle}, {self.car}, {self.motorcycle}'
+class Vehicle:
+    pass
 
 
-# Base Class
+class FlightVehicle(Vehicle):
+    pass
 
 
-class AirVehicle(VehicleType):
-
-    def __init__(self, airplane, flight_vehicle, star_ship):
-        super().__init__(flight_vehicle, star_ship)
-        self.airplane = airplane
-
-    def __str__(self):
-        return f'{self.airplane}, {self.flight_vehicle}, {self.star_ship}'
+class Starship(FlightVehicle):
+    pass
 
 
+class Airplane(FlightVehicle):
+    pass
+
+
+class GroundVehicle(Vehicle):
+    pass
+
+
+class Car(GroundVehicle):
+    pass
+
+
+class Motorcycle(GroundVehicle):
+    pass
